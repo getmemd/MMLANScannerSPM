@@ -6,16 +6,26 @@ import PackageDescription
 let package = Package(
     name: "MMLanScan",
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "MMLanScan",
             targets: ["MMLanScan"]),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "MMLanScan"),
-
+            name: "MMLanScan",
+            dependencies: ["MMLanScanInternal"]
+        ),
+        .target(
+            name: "MMLanScanInternal",
+            dependencies: [
+                "MacFinder",
+                "SimplePing"
+            ],
+            resources: [
+                .process("Data")
+            ]
+        ),
+        .target(name: "MacFinder"),
+        .target(name: "SimplePing")
     ]
 )

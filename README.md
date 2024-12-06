@@ -16,7 +16,7 @@ Originally created by [Mavris](https://github.com/mavris/MMLanScan) and distribu
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/your-username/MMLanScan.git", from: "1.0.0")
+    .package(url: "https://github.com/getmemd/MMLanScan.git", from: "1.0.0")
 ]
 ```
 
